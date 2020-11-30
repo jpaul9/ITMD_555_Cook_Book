@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "357553661692",
+    "firebase_url": "https://my-personal-cook-book.firebaseio.com",
+    "project_id": "my-personal-cook-book",
+    "storage_bucket": "my-personal-cook-book.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:357553661692:android:978a1ab521b1ccc4931979",
+        "android_client_info": {
+          "package_name": "com.example.cook_book"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "357553661692-ikvt7vf8rrdks4mc2dns1qocackt4k91.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJ6ruuqFAypSB3KsTiD6oT_dC1V9NGMEw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "357553661692-ikvt7vf8rrdks4mc2dns1qocackt4k91.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

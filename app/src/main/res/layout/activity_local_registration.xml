@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:autofillHints="First name"
     android:background="@drawable/backgroundv2"
-    tools:context=".Local_registration">
+    tools:context=".Registration">
 
     <TextView
         android:id="@+id/welcome"
@@ -95,26 +95,12 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cpassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Confirm Password"
-        app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:id="@+id/register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"/>
+            android:onClick="register_user"
+            android:text="Register" />
         <Button
             android:id="@+id/login"
             android:layout_marginTop="15dp"

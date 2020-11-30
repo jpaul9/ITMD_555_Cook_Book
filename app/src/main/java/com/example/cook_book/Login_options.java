@@ -4,14 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 
@@ -35,7 +31,7 @@ public class Login_options extends AppCompatActivity {
         google_btn = findViewById(R.id.google_icon);
 
         signup.setOnClickListener(v -> {
-            Intent intent = new Intent (Login_options.this,Local_registration.class);
+            Intent intent = new Intent (Login_options.this, Registration.class);
             startActivity(intent);
             finish();
         });
