@@ -12,7 +12,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static int SPLASH_SCREEN = 2500;
+    private static int SPLASH_SCREEN = 2000;
 
     // Variables for animation logic
     Animation top_anima, bottom_anima;
@@ -35,13 +35,10 @@ public class MainActivity extends AppCompatActivity {
         logo_text.setAnimation(bottom_anima);
 
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(MainActivity.this, Login_options.class);
-                startActivity(intent);
-                finish();
-            }
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(MainActivity.this, Login_options.class);
+            startActivity(intent);
+            finish();
         },SPLASH_SCREEN);
 
 
