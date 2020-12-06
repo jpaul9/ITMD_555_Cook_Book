@@ -45,6 +45,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
             android:hint="First Name">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -58,6 +59,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
             android:hint="Last Name">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -71,6 +73,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
             android:hint="Email Address">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -81,10 +84,26 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/username"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
+            android:hint="Username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:endIconMode="clear_text"
             android:hint="Password"
             app:passwordToggleEnabled="true">
 

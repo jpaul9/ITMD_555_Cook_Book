@@ -1,16 +1,17 @@
 package com.example.cook_book;
 
 public class UserHelperClass {
-    String firstname, lastname, email,password;
+    String firstname, lastname, email, username, password;
 
     public UserHelperClass() {
 
     }
 
-    public UserHelperClass(String firstname, String lastname, String email, String password) {
+    public UserHelperClass(String firstname, String lastname, String email, String username,String password) {
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;
+        this.username = username;
         this.password = password;
     }
 
@@ -36,6 +37,14 @@ public class UserHelperClass {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

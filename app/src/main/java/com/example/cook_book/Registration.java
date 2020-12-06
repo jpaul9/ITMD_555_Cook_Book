@@ -10,7 +10,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Registration extends AppCompatActivity {
-    TextInputLayout first_name, last_name, email_address, pass_w;
+    TextInputLayout first_name, last_name, email_address,user_name, pass_w;
     Button register, login;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
@@ -23,6 +23,7 @@ public class Registration extends AppCompatActivity {
         first_name = findViewById(R.id.fname);
         last_name = findViewById(R.id.lname);
         email_address = findViewById(R.id.email);
+        user_name = findViewById(R.id.username);
         pass_w = findViewById(R.id.password);
         register = findViewById(R.id.register);
         login = findViewById(R.id.login);
@@ -36,7 +37,7 @@ public class Registration extends AppCompatActivity {
 
             startActivity(intent);
 
-            finish();
+            recreate();
 
         });
     }
@@ -60,6 +61,7 @@ public class Registration extends AppCompatActivity {
 
         }
     }
+
     private Boolean validate_lname(){
         String val = last_name.getEditText().getText().toString();
         String nowhitespaces = "(\\S*)";
@@ -78,6 +80,28 @@ public class Registration extends AppCompatActivity {
             return true;
         }
     }
+
+    private Boolean validate_username(){
+        String val = user_name.getEditText().getText().toString();
+        String noWhiteSpace = "(\\S*)";
+        if (val.isEmpty()){
+            user_name.setError("Username is required");
+            return false;
+        }
+        else if (val.length() >=15){
+            user_name.setError("Username should be 5 to 15 characters long");
+            return false;
+        }
+        else if (!val.matches(noWhiteSpace)){
+            user_name.setError("Please remove white spaces");
+            return false;
+        }
+        else{
+            user_name.setError(null);
+            user_name.setErrorEnabled(false);
+            return true;}
+    }
+
     private Boolean validate_email(){
         String val = email_address.getEditText().getText().toString();
         String nowhitespaces = "(\\S*)";
@@ -101,6 +125,7 @@ public class Registration extends AppCompatActivity {
             return true;
         }
     }
+
     private Boolean validate_password(){
         String val = pass_w.getEditText().getText().toString();
         String passwordspecialchar = "^" //represents starting character of the string.
@@ -137,17 +162,22 @@ public class Registration extends AppCompatActivity {
 
     //save data to firebase
     public void register_user(View view){
-        if (!validate_fname() | !validate_lname() | !validate_email() | !validate_password()){
+        if (!validate_fname() | !validate_lname() | !validate_email() | !validate_username() | !validate_password()){
             return;
         }
         //Get values from the registration form and pass it to firebase
         String firstname = first_name.getEditText().getText().toString();
         String lastname =last_name .getEditText().getText().toString();
         String email = email_address.getEditText().getText().toString();
+        String username = user_name.getEditText().getText().toString() ;
         String password = pass_w.getEditText().getText().toString();
 
-        UserHelperClass helperClass = new UserHelperClass(firstname,lastname,email,password);
+        UserHelperClass helperClass = new UserHelperClass(firstname,lastname,email,username,password);
 
-        reference.child(firstname +" "+ lastname).setValue(helperClass);
+        reference.child(username).setValue(helperClass);
+
+        Intent intent = new Intent(getApplicationContext(), Login_options.class);
+        startActivity(intent);
+        finish();
     }
 }

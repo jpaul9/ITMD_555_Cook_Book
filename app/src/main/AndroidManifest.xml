@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cook_Book">
+        <activity android:name=".Profile_page"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login_options"
-            android:parentActivityName=".Login_options"/>
-
+        <activity
+            android:name=".Login_options"
+            android:parentActivityName=".Login_options" />
     </application>
 
 </manifest>
