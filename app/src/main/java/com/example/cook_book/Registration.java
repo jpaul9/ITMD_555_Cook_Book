@@ -158,8 +158,6 @@ public class Registration extends AppCompatActivity {
     }
 
 
-
-
     //save data to firebase
     public void register_user(View view){
         if (!validate_fname() | !validate_lname() | !validate_email() | !validate_username() | !validate_password()){
