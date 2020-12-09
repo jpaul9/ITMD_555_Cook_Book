@@ -122,7 +122,7 @@ public class Login_options extends AppCompatActivity {
                         String lnameFromFDB = dataSnapshot.child(enteredUsername).child("lastname").getValue(String.class);
                         String uNameFromFDB = dataSnapshot.child(enteredUsername).child("username").getValue(String.class);
 
-                        Intent intent = new Intent(getApplicationContext(), Profile_page.class);
+                        Intent intent = new Intent(getApplicationContext(), Recipes_Dashboard.class);
                         intent.putExtra("firstname",fnameFromFDB);
                         intent.putExtra("lastname",lnameFromFDB);
                         intent.putExtra("username",uNameFromFDB);

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/recipes"
+                android:icon="@drawable/recipe_icon_2_24"
+                android:title="Recipes" />
+            <item
+                android:id="@+id/addrecipe"
+                android:icon="@drawable/add_new_recipe_icon_24"
+                android:title="Add Recipe" />
+            <item
+                android:id="@+id/syncrecipes"
+                android:icon="@drawable/sync_recipes_24_icon"
+                android:title="Sync Recipes" />
+        </menu>
+    </item>
+
+    <item android:title="Logout">
+        <menu>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/log_out_24_icon"
+                android:title="Logout" />
+        </menu>
+
+    </item>
+</menu>

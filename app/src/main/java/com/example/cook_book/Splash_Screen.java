@@ -10,7 +10,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class Splash_Screen extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 2000;
 
@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_logo_startup);
 
         //Animation calls
         top_anima = AnimationUtils.loadAnimation(this,R.anim.top_animation);
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(MainActivity.this, Login_options.class);
+            Intent intent = new Intent(Splash_Screen.this, Login_options.class);
             startActivity(intent);
             finish();
         },SPLASH_SCREEN);
