@@ -12,4 +12,15 @@
     <color name="theme_color_3">#93a180</color>
     <color name="theme_color_4">#e3cb95</color>
     <color name="buttons">#d35f34</color>
+
+    <color name="yellow">#FFE66E</color>
+    <color name="lightGreen">#a0ef9a</color>
+    <color name="pink">#ffaedf</color>
+    <color name="lightPurple">#d7afff</color>
+    <color name="skyblue">#9edfff</color>
+    <color name="gray">#e0e0e0</color>
+    <color name="red">#DB4848</color>
+    <color name="blue">#8C9EFF</color>
+
+
 </resources>

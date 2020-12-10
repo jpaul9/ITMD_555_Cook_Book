@@ -1,28 +1,32 @@
 package com.example.cook_book;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
-import android.text.InputFilter;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
+
+import com.example.cook_book.model.Adapter;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.NavigableSet;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Recipes_Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 	DrawerLayout drawerLayout;
 	ActionBarDrawerToggle toggle;
 	NavigationView nav_view;
 	RecyclerView recipeLists;
+	Adapter adapter;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +46,23 @@ public class Recipes_Dashboard extends AppCompatActivity implements NavigationVi
 		drawerLayout.addDrawerListener(toggle);
 		toggle.setDrawerIndicatorEnabled(true);
 		toggle.syncState();
+
+		List<String>titles = new ArrayList<>();
+		List<String>content = new ArrayList<>();
+
+		//test list
+		titles.add("1st recipe title");
+		content.add("content");
+
+		titles.add("2nd recipe title");
+		content.add("content");
+
+		titles.add("3rd recipe title");
+		content.add("content content content content content content content content content content content content ");
+
+		adapter = new Adapter(titles,content);
+		recipeLists.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+		recipeLists.setAdapter(adapter);
 
 	}
 

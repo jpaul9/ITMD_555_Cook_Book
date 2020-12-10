@@ -9,7 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cook_Book">
-        <activity android:name=".Recipes_Dashboard" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"></activity>
+        <activity
+            android:name=".AddRecipe"
+            android:label="@string/title_activity_add_recipe"
+            android:theme="@style/Theme.Cook_Book.NoActionBar"></activity>
+        <activity
+            android:name=".RecipeDetails"
+            android:label="@string/title_activity_recipe_details"
+            android:theme="@style/Theme.Cook_Book.NoActionBar2" />
+        <activity
+            android:name=".Recipes_Dashboard"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".Profile_page" />
         <activity android:name=".Splash_Screen">
             <intent-filter>
