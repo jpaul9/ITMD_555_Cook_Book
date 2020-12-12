@@ -37,7 +37,7 @@
 
     <style name="Theme.Cook_Book.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="Theme.Cook_Book.NoActionBar">
+    <style name="Theme.Cook_Book.NoActionBar3">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>

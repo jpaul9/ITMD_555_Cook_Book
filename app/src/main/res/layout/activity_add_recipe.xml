@@ -16,18 +16,37 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.Cook_Book.PopupOverlay" />
+            app:popupTheme="@style/Theme.Cook_Book.PopupOverlay" >
+
+            <EditText
+                android:id="@+id/addRecipeTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:ems="10"
+                android:hint="Recipe Name"
+                android:inputType="textPersonName"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </androidx.appcompat.widget.Toolbar>
+
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_add_recipe" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_add_recipe" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/saveEditedRecipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:maxWidth="34dp"
+        android:maxHeight="34dp"
+        app:backgroundTint="@color/buttons"
+        app:srcCompat="@drawable/ic_baseline_save_34" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

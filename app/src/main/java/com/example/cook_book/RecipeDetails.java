@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class RecipeDetails extends AppCompatActivity {
-
+	Intent data;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -25,7 +24,7 @@ public class RecipeDetails extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-		Intent data = getIntent();
+		 data = getIntent();
 
 
 		//this will enable scrolling on the textview for recipes
@@ -38,12 +37,15 @@ public class RecipeDetails extends AppCompatActivity {
 		title.setText(data.getStringExtra("title"));
 
 
-		FloatingActionButton fab = findViewById(R.id.fab);
+		FloatingActionButton fab = findViewById(R.id.saveEditedRecipe);
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-						.setAction("Action", null).show();
+				Intent intent = new Intent(view.getContext(),EditRecipe.class);
+				intent.putExtra("title",data.getStringExtra("title"));
+				intent.putExtra("content",data.getStringExtra("content"));
+				intent.putExtra("recipeId",data.getStringExtra("recipeId"));
+				startActivity(intent);
 			}
 		});
 	}
