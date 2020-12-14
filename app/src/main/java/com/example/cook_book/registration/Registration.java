@@ -68,6 +68,7 @@ public class Registration extends AppCompatActivity {
 
                 if(!pw.equals(pwc)){
                     vpass_w.setError("Passwords do not match");
+                    return;
 
                 }
 

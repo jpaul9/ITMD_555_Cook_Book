@@ -3,10 +3,6 @@
     <item android:title="General">
         <menu>
             <item
-                android:id="@+id/recipes"
-                android:icon="@drawable/recipe_icon_2_24"
-                android:title="Recipes" />
-            <item
                 android:id="@+id/addrecipe"
                 android:icon="@drawable/add_new_recipe_icon_24"
                 android:title="Add Recipe" />

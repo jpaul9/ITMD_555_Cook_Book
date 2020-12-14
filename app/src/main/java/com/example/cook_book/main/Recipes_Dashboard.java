@@ -138,7 +138,8 @@ public class Recipes_Dashboard extends AppCompatActivity implements NavigationVi
 						menu.getMenu().add("Delete").setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 							@Override
 							public boolean onMenuItemClick(MenuItem item) {
-								DocumentReference docref = fstore.collection("recipes").document(recipeId);
+								DocumentReference docref = fstore. collection("recipes").document(user.getUid()).collection("My Recipes").document(recipeId);
+
 								docref.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
 									@Override
 									public void onSuccess(Void aVoid) {
