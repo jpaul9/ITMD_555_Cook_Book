@@ -12,34 +12,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cook_Book"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditRecipe"></activity>
+        <activity android:name=".edit.EditRecipe"></activity>
         <activity
-            android:name=".AddRecipe"
+            android:name=".add.AddRecipe"
             android:label="@string/title_activity_add_recipe"
             android:theme="@style/Theme.Cook_Book.NoActionBar3" />
         <activity
-            android:name=".RecipeDetails"
+            android:name=".details.RecipeDetails"
             android:label="@string/title_activity_recipe_details"
             android:theme="@style/Theme.Cook_Book.NoActionBar2" />
         <activity
-            android:name=".Recipes_Dashboard"
+            android:name=".main.Recipes_Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".Profile_page" />
-        <activity android:name=".Splash_Screen">
+        <activity android:name=".splash.Splash_Screen" android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registration">
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".registration.Registration">
+
         </activity>
         <activity
-            android:name=".Login_options"
-            android:parentActivityName=".Login_options" />
+            android:name=".login.Login_options"
+            android:parentActivityName=".login.Login_options" />
     </application>
 
 </manifest>

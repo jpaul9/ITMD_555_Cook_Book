@@ -1,4 +1,4 @@
-package com.example.cook_book;
+package com.example.cook_book.add;
 
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +10,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.cook_book.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -24,6 +27,7 @@ public class AddRecipe extends AppCompatActivity {
 	FirebaseFirestore fstore;
 	EditText contentTitle,recipeContent;
 	ProgressBar saveRecipeProgBar;
+	FirebaseUser user;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class AddRecipe extends AppCompatActivity {
 		setSupportActionBar(toolbar);
 
 		fstore = FirebaseFirestore.getInstance();
+		user = FirebaseAuth.getInstance().getCurrentUser();
 		contentTitle = findViewById(R.id.addRecipeTitle);
 		recipeContent = findViewById(R.id.addRecipeContent);
 		saveRecipeProgBar = findViewById(R.id.progressBar);
@@ -50,9 +55,9 @@ public class AddRecipe extends AppCompatActivity {
 					return;
 				}
 				saveRecipeProgBar.setVisibility(View.VISIBLE);
-				// save recipe to firebase
 
-				DocumentReference docref= fstore.collection("recipes").document();
+				// save recipe to firebase
+				DocumentReference docref= fstore.collection("recipes").document(user.getUid()).collection("My Recipes").document();
 				Map<String,Object> recipe = new HashMap<>();
 				recipe.put("title",rTitle);
 				recipe.put("content",rContent);

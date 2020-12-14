@@ -1,8 +1,10 @@
-package com.example.cook_book;
+package com.example.cook_book.details;
 
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.cook_book.R;
+import com.example.cook_book.edit.EditRecipe;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import androidx.annotation.NonNull;
@@ -41,11 +43,12 @@ public class RecipeDetails extends AppCompatActivity {
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent = new Intent(view.getContext(),EditRecipe.class);
+				Intent intent = new Intent(view.getContext(), EditRecipe.class);
 				intent.putExtra("title",data.getStringExtra("title"));
 				intent.putExtra("content",data.getStringExtra("content"));
 				intent.putExtra("recipeId",data.getStringExtra("recipeId"));
 				startActivity(intent);
+				finish();
 			}
 		});
 	}

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Secret Recipes</string>
+    <string name="app_name">My Personal Cookbook</string>
     <string name="username">username</string>
     <string name="open">open</string>
     <string name="close">close</string>
